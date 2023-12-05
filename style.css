@@ -1,0 +1,171 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:"Gilroy";
+}
+
+html,body{
+  width: 100%;
+  height: 100%;
+}
+
+
+.main{
+  width: 100%;
+  height: 100vh;
+  /* background: red; */
+}
+
+/* back and top dono full screen honge */
+
+.back{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.back img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.top{
+  /* top upar rahega isliye absolute */
+  /* apne ko chahiye k saare click piche yani back par jaye top pe kuch click nhi jaana chahiye to uske liye karenge pointer-events.lekin isse links bhi click nhi hogi to usko aur button ko alag se dedenge*/
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+/* working area main ka 80% lega aur max widht dena hoga taaki  badi screen ka 80% bht zyada hoga isliye */
+
+.working-area{
+  margin: 0 auto;
+  width: 80%;
+  height: 100vh;
+  max-width: 1920px;
+  position: relative;
+  /* border: 2px solid black; */
+}
+
+
+.navbar{
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar a{
+  pointer-events: all;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+}
+.nav-left,.nav-right{
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.nav-left img{
+  height: 60px;
+}
+
+
+/* Hero waala area */
+/*iski height hame nhi pata kitni jayegi ye 100px bus random hai.
+hero waala thoda center mai chahiye isliye usko position dere hai with respect to working area to uska position relative*/
+.hero{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* height: 100px; */
+  /* niche ki 4 line isko center karne k liye hai */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0%,-50%);
+}
+
+.hero-left{
+  min-width: 50%;
+  /* height: 100px; */
+}
+
+.hero-left .elam{
+  /*ye poisiton script k baad aayega*/
+  position: relative;
+  height: 4vw;
+  /* background: black; */
+  overflow: hidden;
+}
+
+.hero-left .elam h1{
+  /*ye poisiton script k baad aayega*/
+  position: absolute;
+  top: 100%;
+  left: 0;
+  line-height: .9;
+  font-family: "kajiro";
+  color: white;
+  font-weight: 100;
+  font-size: 5vw;
+}
+.hero-left .elam h1:nth-child(1){
+  /* ye sirf first waale ko upar laane k liye baaki 4 niche rakhne k liye */
+  top: 0;
+}
+
+.hero-left button {
+  pointer-events: all;
+  margin-top: 2vw ;
+  padding: 0.9vw 3.5vw;
+  font-family: "kajiro";
+  font-weight: 100;
+  font-size: 3vw;
+}
+.hero-left button:hover{
+  color: white;
+  background: transparent;
+}
+
+.hero-right{
+  width: 20%;
+  /* height: 100px; */
+  color: white;
+  /* background-color: black; */
+  /* sabko right rakhna hai aur column wise */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.hero-right p{
+  text-align: right;
+  font-size: 12px;
+}
+
+.hero-right .img-box{
+  width: 100%; /*parent ki 100% widht hai ye aur parent ki khud 20% hai*/
+  height: 150px;
+  /* background: yellow; */
+  margin-top: 10px;
+  margin-bottom: 30px;
+  background-image: url(https://images.unsplash.com/photo-1619946794135-5bc917a27793?q=80&w=1365&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-right p:nth-child(3){
+  margin-bottom: 50px;
+}
+
+
